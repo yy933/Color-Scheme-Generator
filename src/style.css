@@ -20,6 +20,7 @@
   --fs-lg: 1.5rem; /* 24px */
   --fs-xl: 2rem; /* 32px */
   --fs-xxl: 3rem; /* 48px */
+  --fs-3xl: 4rem; /* 64px */
 
   /* Line Height */
   --lh-tight: 1.2;
@@ -58,7 +59,7 @@ h1 {
   margin: 0;
   line-height: var(--lh-tight);
   color: var(--text-color);
-  font-size: var(--fs-xl);
+  font-size: clamp(var(--fs-lg), 3vw, var(--fs-3xl));
   font-weight: 700;
 }
 
@@ -91,14 +92,23 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2.5rem;
+  padding: 1rem 2.5rem;
   background-color: var(--surface-color);
+  width: 100%;
+}
+
+@media (min-width: 560px) {
+  nav {
+    justify-content: center;
+    gap: 1.5rem;
+  }
 }
 
 #theme-toggle {
   background-color: var(--secondary-bg);
   color: var(--text-color);
   border: 1px solid var(--border-color);
+  font-size: clamp(var(--fs-sm), 10px, var(--fs-base));
 }
 
 #theme-toggle:hover {
@@ -106,6 +116,13 @@ nav {
 }
 
 /* Actions section */
+.actions {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.25rem;
+  padding-top: 2rem;
+}
+
 select,
 input[type="color"] {
   background-color: var(--surface-color);
@@ -117,16 +134,34 @@ input[type="color"] {
 }
 
 input[type="color"] {
-  width: 50px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
+  min-height: 44px;
   padding: 2px;
   cursor: pointer;
 }
+
+select {
+  width: 100%;
+  font-size: clamp(var(--fs-md), 4px, var(--fs-lg));
+  font-weight: 700;
+}
+
 #get-scheme-btn {
+  grid-column: span 2;
+  height: 48px;
   background-color: var(--primary-color);
   color: white;
+  font-size: clamp(var(--fs-base), 10px, var(--fs-md));
 }
 
 #get-scheme-btn:hover {
   background-color: var(--primary-hover);
+}
+
+@media (min-width: 560px) {
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
 }
