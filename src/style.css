@@ -108,11 +108,24 @@ nav {
   background-color: var(--secondary-bg);
   color: var(--text-color);
   border: 1px solid var(--border-color);
-  font-size: clamp(var(--fs-sm), 10px, var(--fs-base));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
 }
 
 #theme-toggle:hover {
   filter: brightness(0.9);
+}
+
+#theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor; 
+  flex-shrink: 0;
 }
 
 /* Actions section */
