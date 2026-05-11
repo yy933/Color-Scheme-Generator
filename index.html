@@ -2,16 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color Scheme</title>
+    <title>Color Scheme Generator</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header>
+        <nav class="container">
+          <h1>Color Scheme Generator</h1>
+          <button id="theme-toggle">Dark mode</button>
+        </nav>
+      </header>
+      <main>
+        <section class="actions container">
+          <input type="color" id="seed-color" value="#3D4B7A" />
+
+          <select name="mode" id="mode-select">
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="triad">Triad</option>
+          </select>
+          <button id="get-scheme-btn">Get Color Scheme</button>
+        </section>
+        <section class="results container">
+          <div class="color-column">
+            <div class="color-swatch"></div>
+            <span class="color-hex">#333333</span>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

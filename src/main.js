@@ -1,8 +1,5 @@
-import './style.css'
+import "./style.css";
+import { initTheme } from "./theme.js";
 
-
-document.querySelector("#app").innerHTML = `
-<h1>Color Scheme</h1>
-`;
-
-
+// initialize theme
+initTheme();
