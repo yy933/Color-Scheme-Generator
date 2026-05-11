@@ -3,18 +3,41 @@
 }
 
 :root {
-  --bg-color: #F8F9FA;
-  --text-color: #2D3436;
-  --border-color: #DFE6E9;
+  --bg-color: #f8f9fa;
+  --text-color: #2d3436;
+  --border-color: #dfe6e9;
+
+  /* components color */
+  --surface-color: #ffffff; /* card or input bg */
+  --primary-color: #6c5ce7; /* btn color */
+  --primary-hover: #5b4bc4; /* btn hover */
+  --secondary-bg: #e9ecef; /* secondary bg */
+
+  /* Font Sizes */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.25rem; /* 20px */
+  --fs-lg: 1.5rem; /* 24px */
+  --fs-xl: 2rem; /* 32px */
+  --fs-xxl: 3rem; /* 48px */
+
+  /* Line Height */
+  --lh-tight: 1.2;
+  --lh-base: 1.5;
 }
 
 [data-theme="dark"] {
-  --bg-color: #1A1C2C; 
-  --text-color: #D1D1D1; 
-  --border-color: #333752;
+  --bg-color: #1a1c2c;
+  --text-color: #d1d1d1;
+  /* components color */
+  --surface-color: #24273d;
+  --primary-color: #8275e9;
+  --primary-hover: #9a8fff;
+  --secondary-bg: #2d314d;
 }
 
 body {
+  font-family: "Outfit", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition:
@@ -28,4 +51,82 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+}
+
+/* global styles */
+h1 {
+  margin: 0;
+  line-height: var(--lh-tight);
+  color: var(--text-color);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+
+.text-sm {
+  font-size: var(--fs-sm);
+}
+.text-base {
+  font-size: var(--fs-base);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: var(--fs-base);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2.5rem;
+  background-color: var(--surface-color);
+}
+
+#theme-toggle {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+#theme-toggle:hover {
+  filter: brightness(0.9);
+}
+
+/* Actions section */
+select,
+input[type="color"] {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem;
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="color"] {
+  width: 50px;
+  height: 40px;
+  padding: 2px;
+  cursor: pointer;
+}
+#get-scheme-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#get-scheme-btn:hover {
+  background-color: var(--primary-hover);
 }
