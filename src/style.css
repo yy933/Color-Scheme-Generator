@@ -87,6 +87,19 @@ button {
   padding: 0 1.5rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* navbar */
 nav {
   display: flex;
@@ -167,6 +180,13 @@ select {
   font-weight: 700;
 }
 
+select:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 #get-scheme-btn {
   grid-column: span 2;
   height: 48px;
@@ -214,7 +234,7 @@ select {
 .color-column span {
   font-family: "Monospace", monospace;
   font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   color: #2d3436;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;

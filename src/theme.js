@@ -11,6 +11,10 @@ export function initTheme() {
     htmlElement.setAttribute("data-theme", theme);
     if (themeToggle) {
       themeToggle.innerHTML = theme === "dark" ? SUN_ICON : MOON_ICON;
+      themeToggle.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+      );
     }
   };
 

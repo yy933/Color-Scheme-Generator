@@ -35,13 +35,14 @@
       <header>
         <nav>
           <h1>Color Scheme Generator</h1>
-          <button id="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+          <button id="theme-toggle" aria-label="Switch to dark mode"></button>
         </nav>
       </header>
       <main>
         <section class="actions container">
+          <label for="seed-color" class="sr-only">Please select a color</label>
           <input type="color" id="seed-color" value="#3D4B7A" />
-
+          <label for="mode-select" class="sr-only">Please select a mode</label>
           <select name="mode" id="mode-select">
             <option value="monochrome">Monochrome</option>
             <option value="monochrome-dark">Monochrome-dark</option>
@@ -53,22 +54,41 @@
           </select>
           <button id="get-scheme-btn">Get Color Scheme</button>
         </section>
-        <section class="results container">
-          <div class="color-column">
-            <span class="color-hex">#333333</span>
-          </div>
-          <div class="color-column">
-            <span class="color-hex">#333333</span>
-          </div>
-          <div class="color-column">
-            <span class="color-hex">#333333</span>
-          </div>
-          <div class="color-column">
-            <span class="color-hex">#333333</span>
-          </div>
-          <div class="color-column">
-            <span class="color-hex">#333333</span>
-          </div>
+        <section
+          class="results container"
+          aria-live="polite"
+          aria-label="Color scheme results"
+        >
+          <button
+            class="color-column"
+            aria-label="Color 1: #333333. Click to copy hex code."
+          >
+            <span class="color-hex" aria-hidden="true">#333333</span>
+          </button>
+          <button
+            class="color-column"
+            aria-label="Color 1: #333333. Click to copy hex code."
+          >
+            <span class="color-hex" aria-hidden="true">#333333</span>
+          </button>
+          <button
+            class="color-column"
+            aria-label="Color 1: #333333. Click to copy hex code."
+          >
+            <span class="color-hex" aria-hidden="true">#333333</span>
+          </button>
+          <button
+            class="color-column"
+            aria-label="Color 1: #333333. Click to copy hex code."
+          >
+            <span class="color-hex" aria-hidden="true">#333333</span>
+          </button>
+          <button
+            class="color-column"
+            aria-label="Color 1: #333333. Click to copy hex code."
+          >
+            <span class="color-hex" aria-hidden="true">#333333</span>
+          </button>
         </section>
       </main>
     </div>
