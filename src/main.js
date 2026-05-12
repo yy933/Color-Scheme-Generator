@@ -14,6 +14,7 @@ const MODE_OPTIONS = [
   "quad",
 ];
 const modeSelect = document.querySelector("#mode-select");
+const colorForm = document.querySelector("#color-form");
 const seedColor = document.querySelector("#seed-color");
 const getSchemeBtn = document.querySelector("#get-scheme-btn");
 
@@ -37,6 +38,9 @@ async function handleFetchScheme() {
 }
 
 // listen for button click
-getSchemeBtn.addEventListener("click", handleFetchScheme);
+colorForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  handleFetchScheme();
+});
 
 init();

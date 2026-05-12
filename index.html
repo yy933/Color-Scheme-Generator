@@ -40,13 +40,19 @@
       </header>
       <main>
         <section class="actions container">
-          <label for="seed-color" class="sr-only">Please select a color</label>
-          <input type="color" id="seed-color" value="#3D4B7A" />
-          <label for="mode-select" class="sr-only">Please select a mode</label>
-          <select name="mode" id="mode-select">
-            <!-- Options will be rendered by JavaScript -->
-          </select>
-          <button id="get-scheme-btn">Get Color Scheme</button>
+          <form id="color-form">
+            <label for="seed-color" class="sr-only"
+              >Please select a color</label
+            >
+            <input type="color" id="seed-color" value="#6c5ce7" />
+            <label for="mode-select" class="sr-only"
+              >Please select a mode</label
+            >
+            <select name="mode" id="mode-select">
+              <!-- Options will be rendered by JavaScript -->
+            </select>
+            <button id="get-scheme-btn">Get Color Scheme</button>
+          </form>
         </section>
         <section
           class="results container"

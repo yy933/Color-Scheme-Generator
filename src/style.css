@@ -147,10 +147,13 @@ nav h1 {
 
 /* Actions section */
 .actions {
+  padding: 2rem 1.5rem;
+}
+
+.actions form {
   display: grid;
   grid-template-columns: 70px 1fr;
   gap: 1.25rem;
-  padding: 2rem 1.5rem;
 }
 
 select,
@@ -204,9 +207,14 @@ input:focus-visible {
   .actions {
     max-width: 800px;
     margin: 0 auto;
+  }
+
+  .actions form {
+    width: 100%;
     grid-template-columns: 70px 1fr 200px;
     align-items: center;
   }
+  
   #get-scheme-btn {
     grid-column: auto;
     margin: 0;
