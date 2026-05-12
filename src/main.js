@@ -17,6 +17,7 @@ const modeSelect = document.querySelector("#mode-select");
 const colorForm = document.querySelector("#color-form");
 const seedColor = document.querySelector("#seed-color");
 const getSchemeBtn = document.querySelector("#get-scheme-btn");
+const resultsContainer = document.querySelector(".results");
 
 function init() {
   initTheme();
@@ -37,10 +38,28 @@ async function handleFetchScheme() {
   }
 }
 
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    alert(`Color ${text} copied to clipboard!`);
+  } catch {
+    console.error("Failed to copy!", err);
+    alert(err.message);
+  }
+}
+
 // listen for button click
 colorForm.addEventListener("submit", (e) => {
   e.preventDefault();
   handleFetchScheme();
+});
+
+// listen for copy button click
+resultsContainer.addEventListener("click", (e) => {
+  const colorBtn = e.target.closest(".color-column");
+  if (colorBtn) {
+    copyToClipboard(colorBtn.dataset.hex);
+  }
 });
 
 init();

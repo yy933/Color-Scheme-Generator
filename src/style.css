@@ -214,7 +214,7 @@ input:focus-visible {
     grid-template-columns: 70px 1fr 200px;
     align-items: center;
   }
-  
+
   #get-scheme-btn {
     grid-column: auto;
     margin: 0;
@@ -235,8 +235,23 @@ input:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: flex-grow 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease,
+    z-index 0s;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.color-column:hover,
+.color-column:active {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  border-color: transparent;
+  transform: translateY(-5px);
 }
 
 .color-column span {
@@ -264,5 +279,8 @@ input:focus-visible {
     flex-direction: column;
     align-items: center;
     padding-bottom: 2rem;
+  }
+  .color-column:hover {
+    transform: scale(1.03);
   }
 }
